@@ -1,7 +1,9 @@
 version: '2'
 services:
   mezzanine:
-    image: kalaksi/mezzanine
+    image: docker.io/kalaksi/mezzanine
+    # You can also use GitLab as an alternative to Docker Hub:
+    # image: registry.gitlab.com/kalaksi-containers/mezzanine
     restart: unless-stopped
     cap_drop:
       - ALL
