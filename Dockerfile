@@ -6,9 +6,9 @@ LABEL maintainer="kalaksi@users.noreply.github.com"
 
 # Only allow patch/minor-version updates to keep things more stable. These are overridable in the
 # build-phase. I'll update these from time to time and bump the version if mezzanine gets updated.
-ARG MEZZANINE_VERSION=">=4.3.0,<4.4.0"
+ARG MEZZANINE_VERSION=">=5.1.0,<5.2.0"
 ARG GUNICORN_VERSION=">=20.0.0,<21.0.0"
-ARG EXTRA_PIP_PACKAGES="psycopg2>=2.8.0,<2.9.0 python-ldap>=3.2.0,<3.3.0 django-auth-ldap>=1.7.0,<1.8.0"
+ARG EXTRA_PIP_PACKAGES="psycopg2>=2.8.0,<2.9.0 python-ldap>=3.2.0,<3.3.0 django-auth-ldap>=1.7.0,<1.8.0 django-recaptcha>2,<3.0 django-compressor>2,<3.0 django-htmlmin==0.11.0"
 
 # Set the Mezzanine project's name (mandatory).
 # Configuring the project is done by modifying the local_settings.py file, as usual.
