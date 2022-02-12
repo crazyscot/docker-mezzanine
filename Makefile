@@ -1,2 +1,2 @@
 image:
-	docker build -t kalaksi/mezzanine:latest .
+	docker build -t crazyscot/mezzanine:latest .
