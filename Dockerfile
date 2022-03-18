@@ -2,7 +2,7 @@
 # This work is licensed under the terms of the MIT license. For a copy, see <https://opensource.org/licenses/MIT>.
 
 FROM alpine:3.14
-LABEL maintainer="kalaksi@users.noreply.github.com"
+LABEL maintainer="crazyscot@gmail.com"
 
 # Only allow patch/minor-version updates to keep things more stable. These are overridable in the
 # build-phase. I'll update these from time to time and bump the version if mezzanine gets updated.
