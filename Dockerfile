@@ -29,7 +29,6 @@ RUN apk add --no-cache --virtual=build-deps \
       gcc \
       git \
       jpeg-dev \
-      python2-dev \
       python3-dev \
       openldap-dev \
       musl-dev \
