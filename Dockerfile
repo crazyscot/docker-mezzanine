@@ -2,6 +2,7 @@
 # This work is licensed under the terms of the MIT license. For a copy, see <https://opensource.org/licenses/MIT>.
 
 FROM alpine:3.14
+# NOTE: alpine:3.15 suffers from https://github.com/python-ldap/python-ldap/issues/445
 LABEL maintainer="crazyscot@gmail.com"
 
 # Only allow patch/minor-version updates to keep things more stable. These are overridable in the
