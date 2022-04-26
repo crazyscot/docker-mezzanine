@@ -6,7 +6,8 @@ LABEL maintainer="crazyscot@gmail.com"
 
 # Only allow patch/minor-version updates to keep things more stable. These are overridable in the
 # build-phase. I'll update these from time to time and bump the version if mezzanine gets updated.
-ARG MEZZANINE_VERSION=">=5.1.0,<5.2.0"
+ARG MEZZANINE="mezzanine>=5.1.0,<5.2.0"
+#ARG MEZZANINE="git+https://github.com/stephenmcd/mezzanine.git@531570ad45aceb95d88e8a37c0d4581bac577e6a"
 ARG GUNICORN_VERSION=">=20.0.0,<21.0.0"
 ARG EXTRA_PIP_PACKAGES="psycopg2>=2.8.0,<2.9.0 python-ldap>=3.2.0,<3.3.0 django-auth-ldap>=1.7.0,<1.8.0 django-recaptcha>2,<3.0 django-compressor>2,<3.0 django-htmlmin==0.11.0"
 
@@ -24,6 +25,7 @@ ENV MEZZANINE_UID="78950" MEZZANINE_GID="78950"
 
 RUN apk add --no-cache --virtual=build-deps \
       gcc \
+      git \
       jpeg-dev \
       python2-dev \
       python3-dev \
@@ -39,7 +41,7 @@ RUN apk add --no-cache --virtual=build-deps \
       su-exec && \
     pip3 --no-cache-dir install --upgrade setuptools pip && \
     pip3 --no-cache-dir install --upgrade \
-      mezzanine${MEZZANINE_VERSION} \
+      ${MEZZANINE} \
       gunicorn${GUNICORN_VERSION} \
       ${EXTRA_PIP_PACKAGES} && \
     apk del --no-cache --purge build-deps
