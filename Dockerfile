@@ -1,7 +1,7 @@
 # Copyright (c) 2018 kalaksi@users.noreply.github.com.
 # This work is licensed under the terms of the MIT license. For a copy, see <https://opensource.org/licenses/MIT>.
 
-FROM alpine:3.14.6
+FROM alpine:3.14.10
 # NOTE: alpine:3.15 suffers from https://github.com/python-ldap/python-ldap/issues/445
 LABEL maintainer="crazyscot@gmail.com"
 
