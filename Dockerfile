@@ -70,8 +70,7 @@ CMD set -eu; \
     # a way for this container to affect the container running nginx. For extra security, you can
     # change the file ownership to root, for example.
     sed -r "s/MEZZANINE_PROJECT/$MEZZANINE_PROJECT/g" /etc/nginx/mezzanine.conf.tpl > "/etc/nginx/conf.d/mezzanine.conf" || echo "Failed to generate Nginx configuration! Skipping." >&2; \
-    rm -rf "static/CACHE" ; \
-    echo yes | python3 manage.py collectstatic ; \
+    echo yes | python3 manage.py collectstatic -c ; \
     exec gunicorn -b "0.0.0.0:${GUNICORN_PORT}" -w "$GUNICORN_WORKERS" "${MEZZANINE_PROJECT}.wsgi"
 # Note: To get more logging output, add gunicorn options above.
 # e.g.      --access-logfile=- --log-file=-
